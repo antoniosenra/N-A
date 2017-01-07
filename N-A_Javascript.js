@@ -1,3 +1,5 @@
-//Walley
 console.log("testing console log");
-console.log("testing version 2");
+
+$.ajax({cache: false, url: "https://haveibeenpwned.com/api/v2/breachedaccount/antoniopsenra@yahoo.com", success: function(data) {
+        console.log(data);
+}});
