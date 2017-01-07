@@ -10,17 +10,12 @@
 </head>
 
 <body>
-<h2>Hello, ${user.firstName}!</h2>
-<p class="breachIntro">Check if your email address been victim of a known data breach:</p>
+<h3 class="breachIntro">Check if your email address or account has been victim of a data breach:</h3>
 <form id="checkBreaches" name="checkBreaches">
-<label for="Email">Email address:</label>
-<input id="checkEmail" type="text" name="Email" value="" placeholder="${user.emailAddress}">
+<input id="checkEmail" type="text" name="Email" value="" placeholder="email address or username">
 <input type="submit" name="submit" value="Check It!" onclick="loadDoc();return false;">
 <p><a href="#" onclick='reloadMe();'>Refresh Page / Search Again</a></p>
 </form>
 <div id="breachInfo"></div>
-
-<div>(Courtesy of "<a href="https://haveibeenpwned.com/" target="_blank">https://haveibeenpwned.com/</a>" and Daniel Tyger for the Liferay steps / code.)
-</div>
 </body>
 </html>
