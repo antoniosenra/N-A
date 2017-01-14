@@ -6,11 +6,15 @@ console.log("testing console log");
 
 function loadDoc() {
   var xhttp = new XMLHttpRequest();
+
+//This link describes the value of an XMLHttpRequest: http://www.w3schools.com/xml/dom_httprequest.asp
+
   var url =  "https://haveibeenpwned.com/api/v2/breachedaccount/";
   if (document.getElementById("checkEmail").value == "") {
     var email = "${user.emailAddress}";
 
 //By giving "email" the value "${user.emailAddress}" you guarantee that an error message will be produced. But we should alter this so a more appropriate error message appears if a user doesn't fill in the input box.
+//Understand the components of "document.getElementById("checkEmail").value"
 
   }
   else {
@@ -31,7 +35,7 @@ function loadDoc() {
 
 //This section describes the error message that's produced if the API returns no results. We can come up with something better than this.
 
-    document.getElementById("breachInfo").innerHTML = "<h4><p>404 - No data returned for  <span class=\"attention\">\"" + email + ".\"</span> This is a good thing! It appears you have no known associated breaches with this account.</p></h4>";
+      document.getElementById("breachInfo").innerHTML = "<h4><p>404 - No data returned for  <span class=\"attention\">\"" + email + ".\"</span> This is a good thing! It appears you have no known associated breaches with this account.</p></h4>";
     }
   };
 
@@ -41,6 +45,9 @@ function loadDoc() {
   xhttp.send();
 }
 function writeData(response) {
+
+//Is the writeData variable defined after it's used?? Also, what does JSON.parse do?
+
   var arr = JSON.parse(response);
 
 //I added this console log so we can get an understanding of what the API is
