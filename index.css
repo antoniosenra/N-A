@@ -27,21 +27,22 @@ input:-webkit-autofill {
 	margin: 0 auto;
     margin-bottom: 50px;
 	width: 350px;
-	font-size: 25px;
+	font-size: 20px;
 	font-weight: lighter;
 }
 
 #logo {
-    margin-top: 60px;
-    margin-bottom: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 400px;
 }
 
 #entry_container {
     background: url('assets/textbox_image.png') no-repeat;
     background-position:center;
-    margin-top: 20px;
     margin-bottom: 20px;
     height: 80px;
+    zoom:0.8;
 }
 
 #email_textbox {

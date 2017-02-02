@@ -74,6 +74,7 @@ function writeData(response) {
     }
   out += "</div>";
 document.getElementById("breach_info").innerHTML = out;
+document.getElementById("footer_image").style.visibility = "hidden";
 }
 function reloadMe() {
 window.location = window.location.pathname;
