@@ -7,9 +7,10 @@ body {
 
 html *
 {
-   font-family: Raleway !important;
+   font-family: Verdana !important;
    font-weight: normal;
    font-style: normal;
+   color: white !important;
 }
 
 textarea:focus, input:focus{
@@ -52,7 +53,7 @@ input:-webkit-autofill {
     background-color: transparent;
     border: none;
     font-size: 23px;
-    font-family: Raleway;   
+    font-family: Verdana;   
     color: white; 
 }
 
@@ -69,10 +70,10 @@ input:-webkit-autofill {
   box-shadow: 0 5px #666;
 }
 
-#footer {
+.footer_div {
+	width: 75%;
 	position: fixed;
 	left: 50%;
-	margin-left: -25%;
-	bottom: 0;
-	
+	margin-left: -37.5%;
+	bottom: 0;	
 } 
