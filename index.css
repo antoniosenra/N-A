@@ -18,7 +18,7 @@ textarea:focus, input:focus{
 }
 
 input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px #2362AF inset;
+    -webkit-box-shadow: 0 0 0px 1000px #006BB7 inset;
     -webkit-text-fill-color: white !important;
 }
 
@@ -32,8 +32,8 @@ input:-webkit-autofill {
 }
 
 #logo {
-    margin-top: 20px;
-    margin-bottom: 5px;
+    margin-top: 60px;
+    margin-bottom: 25px;
 }
 
 #entry_container {
