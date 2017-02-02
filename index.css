@@ -1,0 +1,78 @@
+body {
+  background-color: #276CC4;
+-webkit-font-smoothing: antialiased;
+-moz-font-smoothing: antialiased;
+-o-font-smoothing: antialiased;
+}
+
+html *
+{
+   font-family: Raleway !important;
+   font-weight: normal;
+   font-style: normal;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #2362AF inset;
+    -webkit-text-fill-color: white !important;
+}
+
+#breach_intro {
+	color: white;
+	margin: 0 auto;
+    margin-bottom: 50px;
+	width: 350px;
+	font-size: 25px;
+	font-weight: lighter;
+}
+
+#logo {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+#entry_container {
+    background: url('assets/textbox_image.png') no-repeat;
+    background-position:center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 80px;
+}
+
+#email_textbox {
+	width: 450px;
+	height: 40px;
+	vertical-align: middle;
+    margin-left: 75px;
+    margin-right: 75px;
+    background-color: transparent;
+    border: none;
+    font-size: 23px;
+    font-family: Raleway;   
+    color: white; 
+}
+
+#check_button {
+	width: 150px;
+	height: 80px;
+	margin-left: 75px;
+	background: transparent;
+	border: none;
+}
+
+.button:active {
+  background-color: white;
+  box-shadow: 0 5px #666;
+}
+
+#footer {
+	position: fixed;
+	left: 50%;
+	margin-left: -25%;
+	bottom: 0;
+	
+} 

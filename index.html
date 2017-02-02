@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+		<script src="index.js"></script>
+		<title>Zeroday</title>
+	</head>
+
+	<body>
+		<div id="header_wrapper" style="text-align: center">    
+    		<div id="header" style="display: inline-block;">
+    			<img id="header_image" src="assets/header.png" align="middle">	
+    		</div>
+		</div>
+
+		<div id="body_wrapper" style="text-align: center">    
+
+			<img id="logo" src="assets/logo.png" align="middle">	
+			<h3 id="breach_intro" align="middle">Check if your account has been compromised in a data breach</h3>
+
+			<form id="check_breaches" name="check_breaches">
+
+				<div id="entry_container" style="text-align: center"> 
+
+					<input id="email_textbox" type="text" name="Email" value="" placeholder="email address" autofocus>
+					<input id="check_button" type="submit" algin="right" name="submit" value=" " onclick="loadDoc();return false;">
+
+				</div>			
+
+			</form>
+
+			<div id="breach_info"></div>
+
+		</div>
+	</body>
+
+	<footer>	
+		<div id="footer">
+			<img id="header_image" src="assets/footer.png" align="middle">	
+		</div>
+	</footer>
+</html>
