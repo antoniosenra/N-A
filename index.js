@@ -59,7 +59,7 @@ function writeData(response) {
 //It appears to be a variable created for counting purposes. It appears necessary to run the for/while loop that exists below.
 
   var i;
-  var email = document.getElementById("check_breaches").value;
+  var email = document.getElementById("email_textbox").value;
   var out = "<h4><span class=\"attention\">Unfortunately, it looks like \"" + email + "\" has been breached. </span>Please see the details below:</h4>" + "<div class=\"breachEntries\">";
   for(i = 0; i < arr.length; i++) {
     out += "<div class=\"breachEntry\" id=\"breachEntry" + i + "\"><div class=\"breachDomain\"><strong>Domain of Breach:&nbsp;</strong>" + arr[i].Name +
