@@ -1,6 +1,7 @@
 //We started by testing the console log, to make sure we could test each individual step we added to our code.
 
 //test
+//testing to see if committing and syncing is working
 
 console.log("testing console log");
 
