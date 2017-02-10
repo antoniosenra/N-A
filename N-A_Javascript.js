@@ -1,5 +1,7 @@
 //We started by testing the console log, to make sure we could test each individual step we added to our code.
 
+//test
+
 console.log("testing console log");
 
 //The loadDoc function is the function that calls the API.
