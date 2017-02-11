@@ -51,15 +51,10 @@ function loadDoc() {
 //This section describes the error message that's produced if the API returns no results.
 
       if (email == "{empty}") {
-
           document.getElementById("breachInfo").innerHTML = "Please enter an email address and search again."
-
       } else {
-
-      console.log("The ready state test produced a 404.")
-
-      document.getElementById("breachInfo").innerHTML = "<h4><p>Good news! <span class=\"attention\">\"" + email + "\"</span> hasn't been compromised on any data breach we have information on.</p></h4>";
-
+        console.log("The ready state test produced a 404.")
+        document.getElementById("breachInfo").innerHTML = "<h4><p>Good news! <span class=\"attention\">\"" + email + "\"</span> hasn't been compromised on any data breach we have information on.</p></h4>";
       }
 
 //If the xhttp.status is anything other than 200 or 404, we aren't sure what exactly that could mean. For that reason, we have made it so that nothing happens. To the user,
@@ -74,17 +69,21 @@ function loadDoc() {
 //This finishes sending the XMLHttpRequest. See http://www.w3schools.com/xml/dom_httprequest.asp.
 
 }
+
 function writeData(response) {
 
 //Is the writeData variable defined after it's used?? Also, what does JSON.parse do?
 
   var arr = JSON.parse(response);
 
-//I added this console log so we can get an understanding of what the API is
+//This JSON.parse turns the API output into a Javascript object. That allows us to select and modify particular sections of the API output.
+//That's important because then we can deliver a more clear message to the user that explains the details of their compromised account. See below.
 
   console.log("This is the result of console logging the array:");
   console.log(arr);
   console.log("This is the length of the array:" + arr.length);
+
+//I added these console logs so we could get an understanding of what the API returns.
 
 //There is a variable just called "i" that isn't defined? What is the purpose of this? We should figure out how this works.
 
