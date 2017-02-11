@@ -25,21 +25,26 @@ function loadDoc() {
   }
   else {
 
-//Understand the components of "document.getElementById("checkEmail").value"
+//This is the code that will run if there is content in the search box. Understand the components of "document.getElementById("checkEmail").value"
 
     var email = document.getElementById("checkEmail").value;
+
+//document.getElementById("checkEmail").value is equal to whatever text the user input into the search box. If they input nothing, then the value is blank.
+
   }
   var checkUserURL = url + email;
 
-//We have to understand what's going on in the lines below. From "xhttp.onreadystatechange" to "xhttp.send();"
+//Below is the core code needed to run an XMLHttpRequest.
 
   xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
 
-//This appears to be the crucial move that causes our app to output the proper resopnse. We should know how this function works. It appears to use a function that hasn't been created yet (writeData). Is that right?
-//Yes. Even though this function (writeData) hasn't been created yet, it still works. Generally speaking a JS function doesn't need to be created before it can be used. As long as it's created in the same file where it's used, it will work.
+//If the readyState is 4 and the xhttp.status is 200, then we have a response from the API, and that response is "ready"
 
       writeData(xhttp.responseText);
+
+//We created the writeData function later in our code, because we thought our code would be easier to read if we kept the block of code related to the writeData outisde of the block of code related to the XMLHttpRequest.
+
     }
     else if (xhttp.readyState == 4 && xhttp.status == 404){
 
@@ -57,16 +62,16 @@ function loadDoc() {
 
       }
 
+//If the xhttp.status is anything other than 200 or 404, we aren't sure what exactly that could mean. For that reason, we have made it so that nothing happens. To the user,
+//this means that clicking the "search" button won't change the page in any way.
+
     }
   };
-
-//This finishes sending the XMLHttpRequest. See http://www.w3schools.com/xml/dom_httprequest.asp.
 
   xhttp.open("GET", checkUserURL, true);
   xhttp.send();
 
-//There doesn't appear to be a final "else." It goes from "if" to "else if" to nothing.
-//What is the 'response" referring to? Is "response" defined somewhere else in the code?
+//This finishes sending the XMLHttpRequest. See http://www.w3schools.com/xml/dom_httprequest.asp.
 
 }
 function writeData(response) {
