@@ -1,20 +1,26 @@
+console.log("testing console log");
+
 //We started by testing the console log, to make sure we could test each individual step we added to our code.
 
-console.log("testing console log");
+function loadDoc() {
 
 //The loadDoc function is the function that calls the API.
 
-function loadDoc() {
   var xhttp = new XMLHttpRequest();
 
-//This link describes the value of an XMLHttpRequest: http://www.w3schools.com/xml/dom_httprequest.asp
+//The reaason we are using an XMLHttpRequest is that it allows us to (1) update a web page without reloading the page, (2) request data from a server after the page has loaded,
+//(3) receive data from a server after the page has loaded, (4) send data to a server in the background. These combine to allow a user to get quicker results when they search,
+//and without having to see the page completely refresh. See http://www.w3schools.com/xml/dom_httprequest.asp.
 
   var url =  "https://haveibeenpwned.com/api/v2/breachedaccount/";
+
+//The url variable will be used later on to call the API.
+
   if (document.getElementById("checkEmail").value == "") {
+    var email = "{empty}";
 
-//By giving "email" the value "${user.emailAddress}" you guarantee that an error message will be produced. But we should alter this so a more appropriate error message appears if a user doesn't fill in the input box.
-
-    var email = "${user.emailAddress}";
+//By giving "email" the value "empty," if the user doesn't input anything into the search box, then later in the code we can produce a more appropriate error message
+//if the user clicks "search" before they've entered anything in. See line 48 below.
 
   }
   else {
@@ -39,9 +45,18 @@ function loadDoc() {
 
 //This section describes the error message that's produced if the API returns no results.
 
+      if (email == "{empty}") {
+
+          document.getElementById("breachInfo").innerHTML = "Please enter an email address and search again."
+
+      } else {
+
       console.log("The ready state test produced a 404.")
 
       document.getElementById("breachInfo").innerHTML = "<h4><p>Good news! <span class=\"attention\">\"" + email + "\"</span> hasn't been compromised on any data breach we have information on.</p></h4>";
+
+      }
+
     }
   };
 
