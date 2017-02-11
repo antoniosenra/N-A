@@ -1,8 +1,5 @@
 //We started by testing the console log, to make sure we could test each individual step we added to our code.
 
-//test
-//testing to see if committing and syncing is working
-
 console.log("testing console log");
 
 //The loadDoc function is the function that calls the API.
@@ -14,13 +11,16 @@ function loadDoc() {
 
   var url =  "https://haveibeenpwned.com/api/v2/breachedaccount/";
   if (document.getElementById("checkEmail").value == "") {
-    var email = "${user.emailAddress}";
 
 //By giving "email" the value "${user.emailAddress}" you guarantee that an error message will be produced. But we should alter this so a more appropriate error message appears if a user doesn't fill in the input box.
-//Understand the components of "document.getElementById("checkEmail").value"
+
+    var email = "${user.emailAddress}";
 
   }
   else {
+
+//Understand the components of "document.getElementById("checkEmail").value"
+
     var email = document.getElementById("checkEmail").value;
   }
   var checkUserURL = url + email;
@@ -30,24 +30,29 @@ function loadDoc() {
   xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
 
-//This appears to be the crucial move that causes our app to output the proper resopnse. We should know how this function works. It appears to use a function that hasn't been created yet. Is that right?
+//This appears to be the crucial move that causes our app to output the proper resopnse. We should know how this function works. It appears to use a function that hasn't been created yet (writeData). Is that right?
+//Yes. Even though this function (writeData) hasn't been created yet, it still works. Generally speaking a JS function doesn't need to be created before it can be used. As long as it's created in the same file where it's used, it will work.
 
       writeData(xhttp.responseText);
     }
     else if (xhttp.readyState == 4 && xhttp.status == 404){
 
-//This section describes the error message that's produced if the API returns no results. We can come up with something better than this.
+//This section describes the error message that's produced if the API returns no results.
 
       console.log("The ready state test produced a 404.")
 
-      document.getElementById("breachInfo").innerHTML = "<h4><p>404 - No data returned for  <span class=\"attention\">\"" + email + ".\"</span> This is a good thing! It appears you have no known associated breaches with this account.</p></h4>";
+      document.getElementById("breachInfo").innerHTML = "<h4><p>Good news! <span class=\"attention\">\"" + email + "\"</span> hasn't been compromised on any data breach we have information on.</p></h4>";
     }
   };
 
-//We should develop a strong understanding of what these next two methods do.
+//This finishes sending the XMLHttpRequest. See http://www.w3schools.com/xml/dom_httprequest.asp.
 
   xhttp.open("GET", checkUserURL, true);
   xhttp.send();
+
+//There doesn't appear to be a final "else." It goes from "if" to "else if" to nothing.
+//What is the 'response" referring to? Is "response" defined somewhere else in the code?
+
 }
 function writeData(response) {
 
