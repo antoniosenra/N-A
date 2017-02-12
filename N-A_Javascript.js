@@ -51,10 +51,10 @@ function loadDoc() {
 //This section describes the error message that's produced if the API returns no results.
 
       if (email == "{empty}") {
-          document.getElementById("breachInfo").innerHTML = "Please enter an email address and search again."
+          document.getElementById("breachInfo").innerHTML = "<h4>Please enter an email address and search again.</h4>"
       } else {
         console.log("The ready state test produced a 404.")
-        document.getElementById("breachInfo").innerHTML = "<h4>Good news! '" + email + "' hasn't been compromised on any data breach we have information on.</h4>";
+        document.getElementById("breachInfo").innerHTML = "<h4>Good news! \"" + email + "\" hasn't been compromised on any data breach we have information on.</h4>";
       }
 
 //If the xhttp.status is anything other than 200 or 404, we aren't sure what exactly that could mean. For that reason, we have made it so that nothing happens. To the user,
@@ -95,7 +95,7 @@ function writeData(response) {
 
 //With each for loop, the "out" variaable is lengthened.
 
-  var out = "<h4><span class=\"attention\">Unfortunately, it looks like \"" + email + "\" has been breached. </span>Please see the details below:</h4>" + "<div class=\"breachEntries\">";
+  var out = "<h4>Unfortunately, \"" + email + "\" has been breached. Please see the details below.</h4>" + "<div class=\"breachEntries\">";
   for(i = 0; i < arr.length; i++) {
     out += "<div class=\"breachEntry\" id=\"breachEntry" + i + "\"><div class=\"breachDomain\"><strong>Domain of Breach:&nbsp;</strong>" + arr[i].Name +
     "&nbsp;(<a href=\"http://" + arr[i].Domain + "\" target=\"_blank\"><strong>http://" + arr[i].Domain + "</a></strong>):&nbsp;" +
