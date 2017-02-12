@@ -54,7 +54,7 @@ function loadDoc() {
           document.getElementById("breachInfo").innerHTML = "Please enter an email address and search again."
       } else {
         console.log("The ready state test produced a 404.")
-        document.getElementById("breachInfo").innerHTML = "<h4><p>Good news! <span class=\"attention\">\"" + email + "\"</span> hasn't been compromised on any data breach we have information on.</p></h4>";
+        document.getElementById("breachInfo").innerHTML = "<h4>Good news! '" + email + "' hasn't been compromised on any data breach we have information on.</h4>";
       }
 
 //If the xhttp.status is anything other than 200 or 404, we aren't sure what exactly that could mean. For that reason, we have made it so that nothing happens. To the user,
