@@ -82,7 +82,6 @@ function writeData(response) {
   console.log("This is the result of console logging the array:");
   console.log(arr);
   console.log("This is the length of the array:" + arr.length);
-  console.log(arr[2].Domain.includes("forbes"));
 
 //I added these console logs so we could get an understanding of what the API returns.
 
@@ -91,11 +90,6 @@ function writeData(response) {
 //It appears to be a variable created for counting purposes. It appears necessary to run the for/while loop that exists below.
 
   var email = document.getElementById("checkEmail").value;
-
-//What does the line directly below mean? What value does the "span class" attribute add?
-
-//With each for loop, the "out" variaable is lengthened.
-
   var out = "<h4>Unfortunately, \"" + email + "\" has been breached. Please see the details below.</h4>" + "<div class=\"breachEntries\">";
   for(i = 0; i < arr.length; i++) {
     out += "<div class=\"breachEntry\" id=\"breachEntry" + i + "\"><div class=\"breachDomain\"><strong>Domain of Breach:&nbsp;</strong>" + arr[i].Name +
@@ -111,7 +105,10 @@ function writeData(response) {
   out += "</div>";
   document.getElementById("breachInfo").innerHTML = out;
 
-  //var LegalRec = ""
+//This for loop makes it so that for every object in the array, the variable "out" (which contains the output text we display to the user) is
+//lengthened to reflect key information provided to us by HaveIBeenPwned. But because this only happens within the "writeData" function, it
+//only happens if the API has something to output for the user. See line xx above.
+
   for(j = 0; j < arr.length; j++) {
       if (arr[j].Domain.includes("dropbox")) {
         console.log("Conditional is true " + arr[j].Domain)
@@ -127,17 +124,12 @@ function writeData(response) {
       };
   };
 
-  //document.getElementById("breachLegalRecs").innerHTML = LegalRec;
-
-  //if (arr.includes("forbes") = true) {
-    //var LegalRec = "The API output includes \"Forbes\"."
-  //} else {
-    //var LegalRec = "The API output DOES NOT include \"Forbes\"."
-  //};
-
-
+//This for loop checks every object in the array to see if a particular breach is involved (Dropbox and LinkedIn). We don't have legal recommendations for ALL breaches,
+//so it's important for us to determine whether a particular breach is involved. If it is, this for loop also provides the appropriate legal recommendations to the user.
 
 }
 function reloadMe() {
 window.location = window.location.pathname;
 }
+
+//This function allows our "Clear results" button to function.
