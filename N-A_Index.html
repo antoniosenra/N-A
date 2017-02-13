@@ -3,12 +3,20 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="N-A_Style.css">
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
 	<script src="N-A_Javascript.js"></script>
-	<script type="text/javascript" src="jquery-3.1.1.js"></script>
 	<title>N-A</title>
 </head>
 
 <body>
-	<h1>Test<h1/>
+<h1>Zeroday</h1>
+<h3 class="breachIntro">Check if your account has been compromised in a data breach</h3>
+<form id="checkBreaches" name="checkBreaches">
+<input id="checkEmail" type="text" name="Email" value="" placeholder="Email">
+<input type="submit" name="submit" value="Check" onclick="loadDoc();return false;">
+<p><a href="#" onclick='reloadMe();'>Clear results</a></p>
+</form>
+<div id="breachInfo"></div>
+<div id="breachLegalRecs"></div>
 </body>
 </html>
