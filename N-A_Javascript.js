@@ -82,6 +82,7 @@ function writeData(response) {
   console.log("This is the result of console logging the array:");
   console.log(arr);
   console.log("This is the length of the array:" + arr.length);
+  console.log(arr[2].Domain.includes("forbes"));
 
 //I added these console logs so we could get an understanding of what the API returns.
 
@@ -98,7 +99,7 @@ function writeData(response) {
   var out = "<h4>Unfortunately, \"" + email + "\" has been breached. Please see the details below.</h4>" + "<div class=\"breachEntries\">";
   for(i = 0; i < arr.length; i++) {
     out += "<div class=\"breachEntry\" id=\"breachEntry" + i + "\"><div class=\"breachDomain\"><strong>Domain of Breach:&nbsp;</strong>" + arr[i].Name +
-    "&nbsp;(<a href=\"http://" + arr[i].Domain + "\" target=\"_blank\"><strong>http://" + arr[i].Domain + "</a></strong>):&nbsp;" +
+    " (<a href=\"http://" + arr[i].Domain + "\" target=\"_blank\"><strong>http://" + arr[i].Domain + "</a></strong>)" +
     "</div><div class=\"breachDesc\">" +
     arr[i].Description +
     "</div><div class=\"breachItems\"><strong>Breached Items:&nbsp;</strong>" +
@@ -108,7 +109,34 @@ function writeData(response) {
     "</div></div><hr>";
     }
   out += "</div>";
-document.getElementById("breachInfo").innerHTML = out;
+  document.getElementById("breachInfo").innerHTML = out;
+
+  //var LegalRec = ""
+  for(j = 0; j < arr.length; j++) {
+      if (arr[j].Domain.includes("dropbox")) {
+        console.log("Conditional is true " + arr[j].Domain)
+        document.getElementById("breachLegalRecs").innerHTML = "The API output includes Dropbox."
+      } else {
+        console.log("Conditional is false " + arr[j].Domain);
+      };
+      if (arr[j].Domain.includes("linkedin")) {
+        console.log("Conditional is true " + arr[j].Domain)
+        document.getElementById("breachLegalRecs").innerHTML += " The API output includes LinkedIn."
+      } else {
+        console.log("Conditional is false " + arr[j].Domain);
+      };
+  };
+
+  //document.getElementById("breachLegalRecs").innerHTML = LegalRec;
+
+  //if (arr.includes("forbes") = true) {
+    //var LegalRec = "The API output includes \"Forbes\"."
+  //} else {
+    //var LegalRec = "The API output DOES NOT include \"Forbes\"."
+  //};
+
+
+
 }
 function reloadMe() {
 window.location = window.location.pathname;
