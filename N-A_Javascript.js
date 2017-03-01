@@ -96,9 +96,9 @@ function writeData(response) {
     " (<a href=\"http://" + arr[i].Domain + "\" target=\"_blank\"><strong>http://" + arr[i].Domain + "</a></strong>)" +
     "</div><div class=\"breachDesc\">" +
     arr[i].Description +
-    "</div><div class=\"breachItems\"><strong>Breached Items:&nbsp;</strong>" +
+    "</div><div class=\"breachItems\"><strong>Breached Items: </strong>" +
     arr[i].DataClasses +
-    "</div><div class=\"breachDate\"><strong>Breach Date:&nbsp;</strong>" +
+    "</div><div class=\"breachDate\"><strong>Breach Date: </strong>" +
     arr[i].BreachDate +
     "</div></div><hr>";
     }
@@ -112,13 +112,19 @@ function writeData(response) {
   for(j = 0; j < arr.length; j++) {
       if (arr[j].Domain.includes("dropbox")) {
         console.log("Conditional is true " + arr[j].Domain)
-        document.getElementById("breachLegalRecs").innerHTML = "The API output includes Dropbox."
+        document.getElementById("breachLegalRecs").innerHTML = "<strong>Legal Recommendations for Dropbox: </strong> <p>No lawsuit has been filed yet \
+        against Dropbox for this breach. If you would like to pursue legal recourse, we have three attorney recommendations for you. (Arrow icon) </p>\
+        <p>Here is a simulation of what we would have done if there had been a pending class action against Dropbox. (Arrow icon) </p> \
+        <p>Here is a simulation of what we would have done if there had been a pending settlement for this Dropbox breach. (Arrow icon)</p>"
       } else {
         console.log("Conditional is false " + arr[j].Domain);
       };
       if (arr[j].Domain.includes("linkedin")) {
         console.log("Conditional is true " + arr[j].Domain)
-        document.getElementById("breachLegalRecs").innerHTML += " The API output includes LinkedIn."
+        document.getElementById("breachLegalRecs").innerHTML += "<strong>Legal Recommendations for LinkedIn: </strong> <p>No lawsuit has been filed yet \
+        against Dropbox for this breach. If you would like to pursue legal recourse, we have three attorney recommendations for you. (Arrow icon) </p>\
+        <p>Here is a simulation of what we would have done if there had been a pending class action against LinkedIn. (Arrow icon) </p> \
+        <p>Here is a simulation of what we would have done if there had been a pending settlement for this LinkedIn breach. (Arrow icon)</p>"
       } else {
         console.log("Conditional is false " + arr[j].Domain);
       };
