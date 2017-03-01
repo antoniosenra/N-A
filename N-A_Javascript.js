@@ -139,3 +139,7 @@ window.location = window.location.pathname;
 }
 
 //This function allows our "Clear results" button to function.
+
+function PageSwitch() {
+  window.location.replace("http://stackoverflow.com");
+}
