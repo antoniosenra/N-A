@@ -144,4 +144,4 @@ function PageSwitch() {
   window.location.replace("http://stackoverflow.com");
 }
 
-//This function will eventually allow  us to switch from one "page," or collection of HTML/CSS/JS files, to another. 
+//This function will eventually allow  us to switch from one "page," or collection of HTML/CSS/JS files, to another.
