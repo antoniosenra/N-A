@@ -115,7 +115,11 @@ function writeData(response) {
         document.getElementById("breachLegalRecs").innerHTML = "<strong>Legal Recommendations for Dropbox: </strong> <p>No lawsuit has been filed yet \
         against Dropbox for this breach. If you would like to pursue legal recourse, we have three attorney recommendations for you. (Arrow icon) </p>\
         <p>Here is a simulation of what we would have done if there had been a pending class action against Dropbox. (Arrow icon) </p> \
-        <p>Here is a simulation of what we would have done if there had been a pending settlement for this Dropbox breach. (Arrow icon)</p>"
+        <p>Here is a simulation of what we would have done if there had been a pending settlement for this Dropbox breach.</p>"
+        //var btn = document.createElement("BUTTON");
+        //var t = document.createTextNode("Settlement Simulation");
+        //btn.appendChild(t);
+        //document.body.appendChild(btn);
       } else {
         console.log("Conditional is false " + arr[j].Domain);
       };
