@@ -2,22 +2,28 @@
 
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="N-A_Style.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
-	<script src="N-A_Javascript.js"></script>
+	<script src="javascript.js"></script>
 	<title>N-A</title>
 </head>
-
 <body>
 <h1>Zeroday</h1>
 <h3 class="breachIntro">Check if your account has been compromised in a data breach</h3>
 <form id="checkBreaches" name="checkBreaches">
 <input id="checkEmail" type="text" name="Email" value="" placeholder="Email">
 <input type="submit" name="submit" value="Check" onclick="loadDoc();return false;">
+
 <p><input type="submit" name="test" value="Test" onclick="PageSwitch();return false;"></p>
-<p><a href="#" onclick='reloadMe();'>Clear results</a></p>
-</form>
+
+<!--There are two different ways we found of page switching. The one above this comment, and the one below it. I've kept both
+of them here for now, until we figure out which is better.-->
+
+<a href="login.html">Sign In</a>
+<a href="signup.html">Sign Up</a>
 <div id="breachInfo"></div>
 <div id="breachLegalRecs"></div>
+
+<p><a href="#" onclick='reloadMe();'>Clear results</a></p>
 </body>
 </html>

@@ -114,8 +114,12 @@ function writeData(response) {
         console.log("Conditional is true " + arr[j].Domain)
         document.getElementById("breachLegalRecs").innerHTML = "<strong>Legal Recommendations for Dropbox: </strong> <p>No lawsuit has been filed yet \
         against Dropbox for this breach. If you would like to pursue legal recourse, we have three attorney recommendations for you. (Arrow icon) </p>\
-        <p>Here is a simulation of what we would have done if there had been a pending class action against Dropbox. (Arrow icon) </p> \
-        <p>Here is a simulation of what we would have done if there had been a pending settlement for this Dropbox breach. (Arrow icon)</p>"
+        <p>Here is a simulation of what we would have done if there had been a pending settlement for this Dropbox breach.</p>\
+        <p><a href=\"settlement/simulation.html\">Settlement Simulation</a></p>"
+        //var btn = document.createElement("BUTTON");
+        //var t = document.createTextNode("Settlement Simulation");
+        //btn.appendChild(t);
+        //document.body.appendChild(btn);
       } else {
         console.log("Conditional is false " + arr[j].Domain);
       };
@@ -123,8 +127,8 @@ function writeData(response) {
         console.log("Conditional is true " + arr[j].Domain)
         document.getElementById("breachLegalRecs").innerHTML += "<strong>Legal Recommendations for LinkedIn: </strong> <p>No lawsuit has been filed yet \
         against Dropbox for this breach. If you would like to pursue legal recourse, we have three attorney recommendations for you. (Arrow icon) </p>\
-        <p>Here is a simulation of what we would have done if there had been a pending class action against LinkedIn. (Arrow icon) </p> \
-        <p>Here is a simulation of what we would have done if there had been a pending settlement for this LinkedIn breach. (Arrow icon)</p>"
+        <p>Here is a simulation of what we would have done if there had been a pending settlement for this LinkedIn breach. (Arrow icon)</p>\
+        <p><a href=\"settlement/simulation.html\">Settlement Simulation</a></p>"
       } else {
         console.log("Conditional is false " + arr[j].Domain);
       };
@@ -139,9 +143,3 @@ window.location = window.location.pathname;
 }
 
 //This function allows our "Clear results" button to function.
-
-function PageSwitch() {
-  window.location.replace("http://stackoverflow.com");
-}
-
-//This function will eventually allow  us to switch from one "page," or collection of HTML/CSS/JS files, to another. 
